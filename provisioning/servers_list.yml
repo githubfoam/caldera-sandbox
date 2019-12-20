@@ -1,0 +1,15 @@
+---
+- vagrant_box_host: "vg-caldera-79"
+  vagrant_box: "bento/centos-7.7"
+  vbox_name: "vbox-caldera-79"
+  vbox_ram: 512
+  vbox_cpu: 2
+  network_type: "private_network"
+  vagrant_box_ip: 192.168.18.79
+  guest_port: 80
+  host_port: 828
+  # disk1_size: 10
+  # file_to_disk1:"vg-caldera-79_disk1.vdi"
+  server_bootstrap: "provisioning/deploy.yml"
+  ansible_version: "2.9.1"
+  ansible_compatibility_mode: "2.0"

@@ -1,0 +1,8 @@
+---
+# virtualenv params
+virtualenv_dir: "/home/vagrant/python36/calderaenv"
+repo_url: "https://github.com/mitre/caldera.git"
+python_version: "3.6"
+requirements_file: "/vagrant/provisioning/requirements_caldera.txt"
+# caldera params
+branch_version: "2.4.0"

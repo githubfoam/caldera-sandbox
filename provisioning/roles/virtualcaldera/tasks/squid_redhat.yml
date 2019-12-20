@@ -1,0 +1,25 @@
+---
+- name: "Install required packages on RedHat "
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - python-virtualenv
+    - yum-utils
+    - "@Development tools"
+    - "https://centos7.iuscommunity.org/ius-release.rpm"
+    - python36u
+    
+- name: "Install virtualenv caldera using Python 3.6"
+  pip:
+    virtualenv: "{{ virtualenv_dir }}"
+    requirements: "{{ requirements_file }}"
+    virtualenv_python: "python{{ python_version }}"
+    virtualenv_site_packages: no # Whether the virtual environment will inherit packages from the global site-packages directory
+
+- name: "git clone caldera"
+  git:
+    repo: "{{ repo_url }}"
+    dest: "{{ virtualenv_dir }}/caldera"
+    recursive: yes
+    version: "{{ branch_version }}"

@@ -1,0 +1,10 @@
+---
+- name: Add mappings to /etc/hosts
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      {{ item.ip }} {{ item.namelong }} {{ item.nameshort }}
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.nameshort }}"
+  with_items:
+  - { ip: 192.168.18.79, namelong: vg-caldera-79.local, nameshort: vg-caldera-79 }
+  when: add_host_entries

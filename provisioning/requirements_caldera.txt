@@ -1,0 +1,15 @@
+-c constraints_caldera.txt
+ansible
+docker-compose
+aiohttp-jinja2
+aiohttp
+#aiohttp_session
+aiohttp-session
+aiohttp-security
+jinja2
+pyyaml
+cryptography
+aioconsole
+termcolor
+pyfiglet
+websockets
